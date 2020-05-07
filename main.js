@@ -1,6 +1,8 @@
 const root = document.getElementById('root')
 const e = React.createElement
 
+
+
 const SayHi = () => {
   return e('p', null, 'Hello,')
 }
@@ -12,7 +14,7 @@ const UserImg = () => {
 }
 
 const UserDescription = () => {
-  return e(e(SayHi), e(Title), e(UserImg))
+  return e('div', null, [e(SayHi), e(Title), e(UserImg)])
 }
 
 const text = () => {
@@ -26,7 +28,7 @@ const CardImg = () => {
 }
 
 const Card = () => {
-  return e(e(text), e(button),e(CardImg))
+  return e('div', null, [e(text), e(button), e(CardImg)])
 }
 
 const Subtitle = () => {
@@ -48,12 +50,13 @@ const CourseImg = () => {
   return e('img')
 }
 const CoursesCard = () => {
-  return e(e(Description), e(Time), e(PlayButton), e(CourseImg))
+  return e('div', null, [e(Description), e(Time), e(PlayButton), e(CourseImg)])
 }
 
 const App = () => {
-  return e('main', null, [e(SayHi), e(Title), e(text), e(button), e(Subtitle), e(Description), e(Time), e(PlayButton)])
+  return e('main', null, [e(UserDescription), e(Card), e(CoursesCard)])
 }
+// console.log(CoursesCard)
 
 // console.log(e(UserDescription))
 
